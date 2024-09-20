@@ -19,15 +19,14 @@ void setup() {
 }
 
 void loop() {
-	Serial.println("Bouton");
-  	delay(2000);
+	
 
     for (int i = 0; i < 3; i++) {
      	checkLumiere(i);  // Vérifie la lumière avant de servir une boisson
         if (digitalRead(boutons[i]) == LOW) {  // Bouton appuyé
             remplir(stock, i);  // Remplir le stock pour la boisson correspondante
             delay(100);  // Délai pour éviter des doubles lectures
-          	checkLumiere(i);
+            checkLumiere(i);
 
         }
     }
